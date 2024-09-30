@@ -72,9 +72,8 @@ class AddNoteActivity : ComponentActivity(R.layout.add_note_activity) {
             )
             TextButton(onClick = {
                 notesViewModel.addNote(noteObj = NoteModel(0, descriptionVal))
-                if (addNotesError?.first?.isEmpty() ?: false && descriptionVal.trim()
-                        .isNotEmpty()
-                ) {
+                if (addNotesError?.first?.isEmpty() ?: true && descriptionVal.trim()
+                        .length in IntRange(5, 250)) {
                     finish()
                 }
             }) {

@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.mf.toyotamfarag.ui.data.db.dao.NotesDAO
 import com.mf.toyotamfarag.ui.data.model.NoteModel
 
-@Database(entities = [NoteModel::class], version = 100, exportSchema = false)
+@Database(entities = [NoteModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
     abstract fun notesDao(): NotesDAO
 }

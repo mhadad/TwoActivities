@@ -19,7 +19,8 @@ object DatabaseModule {
     @Singleton
     @Provides
     fun getDB(@ApplicationContext context: Context): AppDatabase {
-        return Room.databaseBuilder(context, AppDatabase::class.java, "Toyota_CC").build()
+        return Room.databaseBuilder(context, AppDatabase::class.java, "Toyota_CC").addMigrations(
+            MIGRATION_100_101).build()
     }
 
     @Provides

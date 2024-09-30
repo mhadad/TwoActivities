@@ -19,8 +19,7 @@ object DatabaseModule {
     @Singleton
     @Provides
     fun getDB(@ApplicationContext context: Context): AppDatabase {
-        return Room.databaseBuilder(context, AppDatabase::class.java, "Toyota_CC").addMigrations(
-            MIGRATION_100_1).build()
+        return Room.databaseBuilder(context, AppDatabase::class.java, "Toyota_CC").build()
     }
 
     @Provides
@@ -29,7 +28,7 @@ object DatabaseModule {
     }
 }
 
-val MIGRATION_100_1 = object : Migration(100, 1) {
+val MIGRATION_100_101 = object : Migration(100, 1) {
     override fun migrate(database: SupportSQLiteDatabase) {
         database.execSQL("DROP TABLE Notes")
         database.execSQL("CREATE TABLE Notes (id INTEGER PRIMARY KEY NOT NULL, note TEXT)")

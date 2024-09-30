@@ -5,3 +5,5 @@
   - Two activities with two different instances of one view model.
   - Room persistence & SQLite
   - JUnit 4 tests
+  - Mockito
+  - Kotlin coroutines
